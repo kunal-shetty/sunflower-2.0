@@ -20,6 +20,7 @@ const CustomLightTheme = {
     card: Colors.light.surface,
     text: Colors.light.text,
     border: Colors.light.border,
+    notification: Colors.light.accent,
   },
 };
 
@@ -32,32 +33,42 @@ const CustomDarkTheme = {
     card: Colors.dark.surface,
     text: Colors.dark.text,
     border: Colors.dark.border,
+    notification: Colors.dark.accent,
   },
 };
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const isDark = colorScheme === 'dark';
+  const colors = isDark ? Colors.dark : Colors.light;
 
   return (
     <TodoProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? CustomDarkTheme : CustomLightTheme}>
-        <Stack>
+      <ThemeProvider value={isDark ? CustomDarkTheme : CustomLightTheme}>
+        <Stack
+          screenOptions={{
+            headerStyle: { backgroundColor: colors.surface },
+            headerTintColor: colors.accent,
+            headerTitleStyle: { color: colors.text, fontWeight: '700' },
+            animation: 'slide_from_right',
+          }}
+        >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen
             name="add"
             options={{
               presentation: 'modal',
-              title: 'Add Task',
-              headerStyle: { backgroundColor: colorScheme === 'dark' ? Colors.dark.surface : Colors.light.surface },
-              headerTintColor: colorScheme === 'dark' ? Colors.dark.accent : Colors.light.accent,
-              headerTitleStyle: { color: colorScheme === 'dark' ? Colors.dark.text : Colors.light.text },
+              title: 'New Task',
+              animation: 'slide_from_bottom',
+              headerShown: true,
             }}
           />
           <Stack.Screen
             name="modal"
             options={{
               presentation: 'modal',
-              title: 'Modal',
+              title: 'Details',
+              animation: 'slide_from_bottom',
             }}
           />
         </Stack>
