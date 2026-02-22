@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "todoApp",
+    "name": "Sunflower 2.0",
     "slug": "todoApp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,7 +19,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.kunal2580.todoApp"
     },
     "web": {
       "output": "static",
@@ -38,11 +39,26 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      "@react-native-community/datetimepicker",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#E8820C",
+          "defaultChannel": "task-reminders"
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c55ff648-c046-4398-87cc-4b055c567164"
+      }
     }
   }
 }

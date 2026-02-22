@@ -1,41 +1,92 @@
-/**
- * Below are the colors that are used in the app. The colors are defined in the light and dark mode.
- * There are many other ways to style your app. For example, [Nativewind](https://www.nativewind.dev/), [Tamagui](https://tamagui.dev/), [unistyles](https://reactnativeunistyles.vercel.app), etc.
- */
-
 import { Platform } from 'react-native';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+const tintColorLight = '#E8820C';
+const tintColorDark = '#F5A623';
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
+    text: '#1C1917',
+    secondaryText: '#78716C',
+    background: '#F9FAFB',
+    surface: '#FFFFFF',
+    surfaceElevated: '#FFFFFF',
+    surfaceCard: '#FFFFFF',
     tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
+    accent: '#E8820C',
+    accentDark: '#C06A08',
+    accentLight: '#FFF3E0',
+    accentGradientStart: '#F5A623',
+    accentGradientEnd: '#E8820C',
+    icon: '#78716C',
+    tabIconDefault: '#A8A29E',
     tabIconSelected: tintColorLight,
+    border: '#E5E7EB',
+    borderLight: '#F3F4F6',
+    destructive: '#DC2626',
+    destructiveLight: '#FEE2E2',
+    success: '#16A34A',
+    successLight: '#DCFCE7',
+    warning: '#F59E0B',
+    warningLight: '#FEF3C7',
+    info: '#2563EB',
+    infoLight: '#DBEAFE',
+    priorityUrgent: '#DC2626',
+    priorityHigh: '#EA580C',
+    priorityMedium: '#F59E0B',
+    priorityLow: '#16A34A',
+    priorityNone: '#78716C',
+    favorite: '#EC4899',
+    favoriteLight: '#FCE7F3',
+    archived: '#78716C',
+    cardShadow: 'rgba(0, 0, 0, 0.1)',
+    modalBackdrop: 'rgba(0, 0, 0, 0.5)',
+    shimmer: 'rgba(255, 255, 255, 0.3)',
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
+    text: '#FAFAF9',
+    secondaryText: '#A8A29E',
+    background: '#0C0A09',
+    surface: '#1C1917',
+    surfaceElevated: '#292524',
+    surfaceCard: '#1C1917',
     tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
+    accent: '#F5A623',
+    accentDark: '#E8820C',
+    accentLight: '#2D1F0E',
+    accentGradientStart: '#F5A623',
+    accentGradientEnd: '#E8820C',
+    icon: '#A8A29E',
+    tabIconDefault: '#78716C',
     tabIconSelected: tintColorDark,
+    border: '#292524',
+    borderLight: '#1C1917',
+    destructive: '#EF4444',
+    destructiveLight: '#450A0A',
+    success: '#4ADE80',
+    successLight: '#052E16',
+    warning: '#FBBF24',
+    warningLight: '#422006',
+    info: '#60A5FA',
+    infoLight: '#172554',
+    priorityUrgent: '#EF4444',
+    priorityHigh: '#FB923C',
+    priorityMedium: '#FBBF24',
+    priorityLow: '#4ADE80',
+    priorityNone: '#A8A29E',
+    favorite: '#EC4899',
+    favoriteLight: '#831843',
+    archived: '#A8A29E',
+    cardShadow: 'rgba(0, 0, 0, 0.4)',
+    modalBackdrop: 'rgba(0, 0, 0, 0.7)',
+    shimmer: 'rgba(255, 255, 255, 0.06)',
   },
 };
 
 export const Fonts = Platform.select({
   ios: {
-    /** iOS `UIFontDescriptorSystemDesignDefault` */
     sans: 'system-ui',
-    /** iOS `UIFontDescriptorSystemDesignSerif` */
     serif: 'ui-serif',
-    /** iOS `UIFontDescriptorSystemDesignRounded` */
     rounded: 'ui-rounded',
-    /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
   },
   default: {
