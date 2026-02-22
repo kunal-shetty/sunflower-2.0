@@ -50,7 +50,7 @@ export default function OnboardingScreen() {
                 {/* Title */}
                 <Animated.View entering={FadeInUp.delay(200).springify()}>
                     <Text style={[styles.title, { color: colors.text }]}>Welcome to</Text>
-                    <Text style={[styles.appName, { color: colors.accent }]}>TodoApp</Text>
+                    <Text style={[styles.appName, { color: colors.accent }]}>Sunflower 2.0</Text>
                 </Animated.View>
 
                 {/* Subtitle */}

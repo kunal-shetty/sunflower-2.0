@@ -2,7 +2,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import * as Notifications from 'expo-notifications';
 import { Stack, useRouter } from 'expo-router';
-import * as NativeSplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useState } from 'react';
 import { Platform } from 'react-native';
@@ -12,8 +11,6 @@ import SplashScreen from '@/components/splash-screen';
 import { Colors } from '@/constants/theme';
 import { TodoProvider } from '@/context/todo-context';
 
-// Prevent the native splash from auto-hiding
-NativeSplashScreen.preventAutoHideAsync();
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -120,12 +117,6 @@ export default function RootLayout() {
     })();
   }, []);
 
-  // Hide native splash once data is loaded
-  useEffect(() => {
-    if (isReady) {
-      NativeSplashScreen.hideAsync();
-    }
-  }, [isReady]);
 
   // Redirect to onboarding if no username
   useEffect(() => {

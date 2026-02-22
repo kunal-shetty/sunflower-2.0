@@ -85,7 +85,7 @@ export default function SplashScreen({ onFinish }: SplashScreenProps) {
 
                 {/* App name */}
                 <Animated.View style={textAnimatedStyle}>
-                    <Text style={[styles.title, { color: colors.text }]}>todoApp</Text>
+                    <Text style={[styles.title, { color: colors.text }]}>Sunflower 2.0</Text>
                 </Animated.View>
 
                 {/* Tagline */}
